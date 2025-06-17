@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christy C. - Luxury Fashion, Custom-made for YOU</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="menu-icon">
+            <button class="icon-btn" id="Btn1">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="logo">Christy C.
+            <span>
+                <img class="logo-img" src="icon - C2 - gold with bag.PNG" alt="Christy C. logo" >
+            </span>
+        </div>
+        <div class="cart-icon">
+            <button id="empty-cart" class="icon-btn" onnclick="emptyCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">FIRST TIME? GET 30% OFF!</h1>
+                <button class="cta-button" onclick="showProductPage()">Shop Now</button>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="categories">
+            <h2 class="section-title">Featured Categories</h2>
+            <div class="category-carousel">
+                <div class="category-item" onclick="showProductPage('heels')">
+                    <div class="category-image heels-bg"></div>
+                    <h3>Heels</h3>
+                </div>
+                <div class="category-item" onclick="showProductPage('bags')">
+                    <div class="category-image bags-bg"></div>
+                    <h3>Bags</h3>
+                </div>
+                <div class="category-item" onclick="showProductPage('sandals')">
+                    <div class="category-image sandals-bg"></div>
+                    <h3>Sandals</h3>
+                </div>
+                <div class="category-item" onclick="showProductPage('custom')">
+                    <div class="category-image custom-bg"></div>
+                    <h3>Custom</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="newsletter">
+                <h3>Stay Updated</h3>
+                <div class="newsletter-form">
+                    <!-- <input type="email" placeholder="This feature is not ready!" class="email-input"> -->
+                    <button class="subscribe-btn" id="subscribeBtn">Subscribe</button>
+                </div>
+            </div>
+            <div class="newsletter">
+                <div class="newsletter-form">          
+                    <button class="feedback-btn"><a href="https://forms.gle/T3R3XhPvrPimnrjFA">Feedback</a></button>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Product Page -->
+    <div id="product-page" class="page">
+        <!-- Product Header -->
+        <div class="product-header">
+            <div class="back-btn" onclick="showLandingPage()">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="logo">Christy C.
+                <span>
+                    <img class="logo-img" src="icon - C2 - gold with bag.PNG" alt="Christy C. logo" >
+                </span>
+             </div>
+            <div class="header-actions">
+                <div class="share-icon">
+                    <button id="shareBtn" class="icon-btn">
+                        <i class="fas fa-share"></i>
+                    </button>
+                </div>
+                <div class="cart-icon">
+                    <button id="empty-cart" class="icon-btn" onnclick="emptyCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Image Carousel -->
+        <div class="product-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="product-image" id="product-img-1"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="product-image" id="product-img-2"></div>
+                </div>
+                <div class="carousel-slide">
+                    <div class="product-image" id="product-img-3"></div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+
+        <!-- Product Info -->
+        <div class="product-info">
+            <h1 class="product-title" id="product-title">Elegant Leather Heels</h1>
+            <div class="rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="rating-text" id="rating-text">(4.8)</span>
+            </div>
+            <div class="price">
+                <span class="original-price">RM299</span>
+                <span class="sale-price">RM209</span>
+                <span class="discount">30% OFF</span>
+            </div>
+
+            <!-- Color Selector -->
+            <div class="selector-section">
+                <h4>Color</h4>
+                <div class="color-selector">
+                    <div class="color-option active" data-color="black" style="background: #000"></div>
+                    <div class="color-option" data-color="brown" style="background: #8B4513"></div>
+                    <div class="color-option" data-color="red" style="background: #DC143C"></div>
+                    <div class="color-option" data-color="purple" style="background: purple"></div>
+                    <div class="color-option" data-color="blue" style="background: #0000FF"></div>
+                    <div class="color-option" data-color="maroon" style="background: maroon"></div>
+                    <div class="color-option" data-color="pink" style="background: #FFC0CB"></div>
+                    <div class="color-option" data-color="nude" style="background: #F5DEB3"></div>
+                </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div class="selector-section">
+                <h4>Size (cm)</h4>
+                <select class="size-selector">
+                    <option value="">Select Size (Adult women only)</option>
+                    <option value="22.5">22.5 cm (UK: 4, US: 5)</option>
+                    <option value="23">23 cm (UK: 4.5, US: 5.5)</option>
+                    <option value="23.5">23.5 cm (UK: 5, US: 6)</option>
+                    <option value="24">24 cm (UK: 5.5, US: 6.5)</option>
+                    <option value="24.5">24.5 cm (UK: 6, US: 7)</option>
+                    <option value="25">25 cm (UK: 6.5, US: 7.5)</option>
+                    <option value="25.5">25.5 cm (UK: 7, US: 8)</option>
+                    <option value="26">26 cm (UK: 7.5, US: 8.5)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details">
+            <div class="details-toggle">
+                <div class="toggle-item active" onclick="toggleDetails('details')">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>DETAILS</span>
+                </div>
+                <div class="toggle-item" onclick="toggleDetails('reviews')">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>REVIEWS</span>
+                </div>
+            </div>
+
+            <div class="details-content" id="details-content">
+                <div class="details-section active" id="details">
+                    <p>Crafted from premium leather with meticulous attention to detail. Features a comfortable 8cm heel height and cushioned insole for all-day wear.</p>
+                    <ul>
+                        <li>Material: Genuine Leather</li>
+                        <li>Heel Height: 8cm</li>
+                        <li>Sole: Non-slip rubber</li>
+                        <li>Lining: Soft leather interior</li>
+                    </ul>
+                </div>
+                <div class="details-section" id="reviews">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">Sarah M.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Absolutely love these heels! So comfortable and stylish. Perfect for work and evening events."</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">Lisa K.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Great quality but runs slightly small. Would recommend ordering half a size up."</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">Emma R.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Beautiful craftsmanship! The leather is so soft and the heel height is perfect for daily wear."</p>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-header">
+                            <span class="reviewer-name">Michelle T.</span>
+                            <div class="review-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <p>"Nice shoes but the color was darker than expected. Delivery was fast though."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Add to Cart -->
+        <div class="sticky-cart">
+            <button class="add-to-cart-btn" onclick="addToCart()">
+                <i class="fas fa-shopping-cart"></i>
+                ADD TO CART
+            </button>
+        </div>
+    </div>
+
+    <div id="constructionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>⚠️ Under Construction</h2>
+            <p>This feature is currently being developed.</p>
+            <p>Please check back soon!</p>
+            <img src="sign_15397855.png" style="width: 50px; height: 50px; margin: 10px auto;">
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 1;
+        let cartCount = 0;
+        let currentCategory = 'heels';
+
+        const products = {
+            heels: {
+                title: 'Elegant Leather Heels',
+                rating: 4.8,
+                images: ['heels-1', 'heels-2', 'heels-3']
+            },
+            bags: {
+                title: 'Designer Leather Handbag',
+                rating: 4.6,
+                images: ['bags-1', 'bags-2', 'bags-3']
+            },
+            sandals: {
+                title: 'Comfortable Summer Sandals',
+                rating: 4.9,
+                images: ['sandals-1', 'sandals-2', 'sandals-3']
+            },
+            custom: {
+                title: 'Custom Made Shoes',
+                rating: 4.7,
+                images: ['custom-1', 'custom-2', 'custom-3']
+            }
+        };
+
+        function showProductPage(category = 'heels') {
+            currentCategory = category;
+            updateProductInfo();
+            document.getElementById('landing-page').classList.remove('active');
+            document.getElementById('product-page').classList.add('active');
+        }
+
+        function showLandingPage() {
+            document.getElementById('product-page').classList.remove('active');
+            document.getElementById('landing-page').classList.add('active');
+        }
+
+        function updateProductInfo() {
+            const product = products[currentCategory];
+            document.getElementById('product-title').textContent = product.title;
+            document.getElementById('rating-text').textContent = `(${product.rating})`;
+            
+            // Update product images
+            const images = document.querySelectorAll('.product-image');
+            images.forEach((img, index) => {
+                img.className = `product-image ${currentCategory}-product-${index + 1}`;
+            });
+        }
+
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (n > slides.length) currentSlideIndex = 1;
+            if (n < 1) currentSlideIndex = slides.length;
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[currentSlideIndex - 1].classList.add('active');
+            dots[currentSlideIndex - 1].classList.add('active');
+        }
+
+        function toggleDetails(section) {
+            const toggleItems = document.querySelectorAll('.toggle-item');
+            const detailsSections = document.querySelectorAll('.details-section');
+            
+            toggleItems.forEach(item => item.classList.remove('active'));
+            detailsSections.forEach(section => section.classList.remove('active'));
+            
+            event.target.closest('.toggle-item').classList.add('active');
+            document.getElementById(section).classList.add('active');
+        }
+
+        function addToCart() {
+            const selectedSize = document.querySelector('.size-selector').value;
+            if (!selectedSize) {
+                alert('Please select a size');
+                return;
+            }
+        
+        function emptyCart() {
+        const isEmptyCart = document.querySelector('.cart-count').value;
+            if (!isEmptyCart) {
+                alert('The cart is empty. Please add items to the cart before proceeding.');
+                return;
+            }
+        }    
+            cartCount++;
+            document.querySelectorAll('.cart-count').forEach(count => {
+                count.textContent = cartCount;
+                count.style.display = cartCount > 0 ? 'flex' : 'none';
+            });
+            
+            // Add animation
+            const btn = document.querySelector('.add-to-cart-btn');
+            btn.style.transform = 'scale(0.95)';
+            btn.textContent = 'ADDED!';
+            
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+                btn.innerHTML = '<i class="fas fa-shopping-cart"></i> ADD TO CART';
+            }, 1000);
+        }
+
+        // Color selector functionality
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Touch gestures for carousel
+        let startX = 0;
+        let endX = 0;
+
+        document.querySelector('.carousel-container').addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+
+        document.querySelector('.carousel-container').addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    currentSlide(currentSlideIndex + 1);
+                } else {
+                    // Swipe right - previous slide
+                    currentSlide(currentSlideIndex - 1);
+                }
+            }
+        }
+    </script>
+</body>
+<script src="pop-up.js"></script>
+</html>
